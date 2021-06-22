@@ -21,17 +21,35 @@ public class ExercicioN {
 // </editor-fold>
 		// Your code starts here :)
 		
+/*
+ Elaborar um programa que leia 20 elementos (valores reais) para temperaturas
+em graus Celsius e armazene esses valores em uma matriz A de uma dimensão.
+O programa ao final deve apresentar a menor, a maior e a média das temperaturas
+lidas.		
+		*/
+
+
+		int tamanhoMatriz = 4;
+		Double[] matrizA = new Double[tamanhoMatriz];
+		Double menor = Double.MAX_VALUE;
+		Double maior = Double.MIN_VALUE;
 		
-		// pop-up window version
-		writeWindow("Hello! I'm a Pop-up Window app :)");
-		String petName = readWindowString("What is the name of your pet?");
-		writeWindow(petName + " is not allowed here! :0");
+		for (int indice = 0; indice < matrizA.length; indice++) {
+			matrizA[indice] = readDouble("Digite uma temperatura (ºC)");
+			
+			if (matrizA[indice] < menor) {
+				menor = matrizA[indice];
+			}
+			
+			if (matrizA[indice] > maior) {
+				maior = matrizA[indice];
+			}
+			
+			write("Valor digitado: " + matrizA[indice]);
+					
+		}
 		
-		// console version
-		write("This is a new way to \n use a \n Console app :)");
-		String name = readString("Hello! I'm a Console app :) \n What's your name? ");
-		write("You're welcome, " + name + "!\n ;)");
-		
+		write("Maior Valor: " + maior + "\nMenor Valor: " + menor + "\nMédia: ");
 		
 		
 		// Your code ends here :(
