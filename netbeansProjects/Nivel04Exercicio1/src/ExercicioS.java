@@ -15,49 +15,58 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class ExercicioN {
+public class ExercicioS {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
 		
 /*
- Elaborar um programa que leia 20 elementos (valores reais) para temperaturas
-em graus Celsius e armazene esses valores em uma matriz A de uma dimensão.
-O programa ao final deve apresentar a menor, a maior e a média das temperaturas
-lidas.		
+Elaborar um programa que leia duas matrizes A e B de uma dimensão com seis
+elementos. A matriz A deve aceitar apenas a entrada de valores pares, enquanto
+a matriz B deve aceitar apenas a entrada de valores ímpares. A entrada das
+matrizes deve ser validada pelo programa e não pelo usuário. Construir uma
+matriz C que seja o resultado da junção das matrizes A e B, de modo que a
+matriz C contenha 12 elementos. Apresentar os elementos da matriz C.		
 		*/
-
-
-		int tamanhoMatriz = 5;
-		Double[] matrizA = new Double[tamanhoMatriz];
-		Double menor = Double.MAX_VALUE;
-		Double maior = Double.MIN_VALUE;
-		Double soma = 0.0;
-		
-		
-		for (int indice = 0; indice < matrizA.length; indice++) {
-			matrizA[indice] = readDouble("Digite uma temperatura (ºC)");
+	int tamanhoMatriz = 6;
+	Integer[] matrizA = new Integer[tamanhoMatriz];
+	Integer[] matrizB = new Integer[tamanhoMatriz];
+	Integer[] matrizC = new Integer[tamanhoMatriz * 2];
+	int valor = 0;
+	
+		for (int indice = 0; indice < tamanhoMatriz; indice++) {
 			
-			soma += matrizA[indice];
-			
-			
-			if (matrizA[indice] < menor) {
-				menor = matrizA[indice];
-			}
-			
-			if (matrizA[indice] > maior) {
-				maior = matrizA[indice];
-			}
-			
-			//write("Valor digitado: " + matrizA[indice]);
+			do {
+			valor = readInteger("Digite um número par para o elemento " + indice);
+				
+			} while (valor %2 > 0);
 					
+			
+			matrizA[indice] = valor;
+			
+			matrizC[indice] = matrizA[indice];
+		}
+	
+		int indiceB = matrizA.length;
+		
+		for (int indice = 0; indice < tamanhoMatriz; indice++) {
+			
+			do {
+			valor = readInteger("Digite um número ímpar para o elemento " + indice);
+				
+			} while (valor %2 == 0);
+					
+			
+			matrizB[indice] = valor;
+			matrizC[indiceB] = matrizB[indice];
+			
+			indiceB++;
 		}
 		
-		Double media = soma / tamanhoMatriz;
-		
-		write("Maior Valor: " + maior + "\nMenor Valor: " + menor + "\nMédia: " + media);
-		
+		for (int indice = 0; indice < matrizC.length; indice++) {
+			write("Matriz C: " + matrizC[indice]);
+		}
 		
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">

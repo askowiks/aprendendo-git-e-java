@@ -15,49 +15,41 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class ExercicioN {
+public class ExercicioQ {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
 		
-/*
- Elaborar um programa que leia 20 elementos (valores reais) para temperaturas
-em graus Celsius e armazene esses valores em uma matriz A de uma dimensão.
-O programa ao final deve apresentar a menor, a maior e a média das temperaturas
-lidas.		
+	/*
+Elaborar um programa que leia 15 elementos reais para uma matriz A de uma
+dimensão do tipo vetor. Construir uma matriz B de mesmo tipo e dimensão,
+observando a seguinte lei de formação: "todo elemento da matriz A que possuir
+índice par deve ter seu elemento dividido por 2; caso contrário, o elemento da 
+matriz A deve ser multiplicado por 1.5". Apresentar os elementos da matriz B.
 		*/
-
-
-		int tamanhoMatriz = 5;
-		Double[] matrizA = new Double[tamanhoMatriz];
-		Double menor = Double.MAX_VALUE;
-		Double maior = Double.MIN_VALUE;
-		Double soma = 0.0;
-		
-		
+	
+	int tamanhoMatriz = 6;
+	Integer[] matrizA = new Integer[tamanhoMatriz];
+	Double[] matrizB = new Double[tamanhoMatriz];
+	
 		for (int indice = 0; indice < matrizA.length; indice++) {
-			matrizA[indice] = readDouble("Digite uma temperatura (ºC)");
+			matrizA[indice] = readInteger("Digite um valor para A");
 			
-			soma += matrizA[indice];
-			
-			
-			if (matrizA[indice] < menor) {
-				menor = matrizA[indice];
+			if (indice %2 > 0) {
+				matrizB[indice] = matrizA[indice] * 1.5;
+			} else {
+				matrizB[indice] = matrizA[indice] / 2.0;
 			}
-			
-			if (matrizA[indice] > maior) {
-				maior = matrizA[indice];
-			}
-			
-			//write("Valor digitado: " + matrizA[indice]);
-					
 		}
 		
-		Double media = soma / tamanhoMatriz;
+		for (int indice = 0; indice < matrizA.length; indice++) {
+			write("Valor de A: " + matrizA[indice]);
+		}
 		
-		write("Maior Valor: " + maior + "\nMenor Valor: " + menor + "\nMédia: " + media);
-		
+		for (int indice = 0; indice < matrizB.length; indice++) {
+			write("Valor de B: " + matrizB[indice]);
+		}
 		
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">

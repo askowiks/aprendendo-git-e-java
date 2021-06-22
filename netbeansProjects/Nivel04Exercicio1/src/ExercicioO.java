@@ -15,48 +15,42 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class ExercicioN {
+public class ExercicioO {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
 		
-/*
- Elaborar um programa que leia 20 elementos (valores reais) para temperaturas
-em graus Celsius e armazene esses valores em uma matriz A de uma dimensão.
-O programa ao final deve apresentar a menor, a maior e a média das temperaturas
-lidas.		
+	/*
+Escrever um programa que leia 25 elementos (valores reais) para temperaturas em
+graus Celsius e armazene esses valores em uma matriz A de uma dimensão do tipo
+vetor. Construir uma matriz B de mesmo tipo e dimensão, em que cada elemento da
+matriz B deve ser a conversão da temperatura em graus Fahrenheit do elemento
+correspondente da matriz A. Apresentar os elementos das matrizes A e B.
+		
+	Converter a temperatura de 15 ºC para ºF. 15 x 1,8 = 27 + 32 = 59 ºF
 		*/
-
-
-		int tamanhoMatriz = 5;
-		Double[] matrizA = new Double[tamanhoMatriz];
-		Double menor = Double.MAX_VALUE;
-		Double maior = Double.MIN_VALUE;
-		Double soma = 0.0;
-		
-		
+	
+	int tamanhoMatriz = 6;
+	
+	Double[] matrizA = new Double[tamanhoMatriz];
+	Double[] matrizB = new Double[tamanhoMatriz];
+	
+	Double fahrenheit = 0.0;
+	
 		for (int indice = 0; indice < matrizA.length; indice++) {
-			matrizA[indice] = readDouble("Digite uma temperatura (ºC)");
+			matrizA[indice] = readDouble("Digite o valor em ºC");
 			
-			soma += matrizA[indice];
+			fahrenheit = (matrizA[indice] * 1.8) + 32;
 			
-			
-			if (matrizA[indice] < menor) {
-				menor = matrizA[indice];
-			}
-			
-			if (matrizA[indice] > maior) {
-				maior = matrizA[indice];
-			}
-			
-			//write("Valor digitado: " + matrizA[indice]);
-					
+			matrizB[indice] = fahrenheit;
 		}
 		
-		Double media = soma / tamanhoMatriz;
-		
-		write("Maior Valor: " + maior + "\nMenor Valor: " + menor + "\nMédia: " + media);
+		for (int indice = 0; indice < matrizA.length; indice++) {
+			write("Conversão: \n" + matrizA[indice] + "ºC  -->  " + matrizB[indice] + "ºF");
+			
+		}
+	
 		
 		
 		// Your code ends here :(

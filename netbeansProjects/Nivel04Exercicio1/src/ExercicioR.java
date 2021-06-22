@@ -15,56 +15,69 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class ExercicioN {
+public class ExercicioR {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
-		
-/*
- Elaborar um programa que leia 20 elementos (valores reais) para temperaturas
-em graus Celsius e armazene esses valores em uma matriz A de uma dimensão.
-O programa ao final deve apresentar a menor, a maior e a média das temperaturas
-lidas.		
-		*/
 
+		/*
+Elaborar um programa que leia seis elementos (valores inteiros) para as matrizes
+A e B de uma dimensão do tipo vetor. Construir as matrizes C e D de mesmo tipo e
+dimensão. A matriz C deve ser formada pelos elementos de índice ímpar das matrizes
+A e B e a matriz D deve ser formada pelos elementos de índice par das matrizes
+A e B. Apresentar os elementos das matrizes C e D.
+		 */
+		int tamanhoMatriz = 4;
+		Integer[] matrizA = new Integer[tamanhoMatriz];
+		Integer[] matrizB = new Integer[tamanhoMatriz];
+		Integer[] matrizC = new Integer[tamanhoMatriz];
+		Integer[] matrizD = new Integer[tamanhoMatriz];
+		int contInpar = 0;
+		int contPar = 0;
 
-		int tamanhoMatriz = 5;
-		Double[] matrizA = new Double[tamanhoMatriz];
-		Double menor = Double.MAX_VALUE;
-		Double maior = Double.MIN_VALUE;
-		Double soma = 0.0;
-		
-		
-		for (int indice = 0; indice < matrizA.length; indice++) {
-			matrizA[indice] = readDouble("Digite uma temperatura (ºC)");
-			
-			soma += matrizA[indice];
-			
-			
-			if (matrizA[indice] < menor) {
-				menor = matrizA[indice];
+		for (int indice = 0; indice < tamanhoMatriz; indice++) {
+			matrizA[indice] = readInteger("Digite um número para A");
+			matrizB[indice] = readInteger("Digite um número para B");
+
+			if (indice % 2 > 0) {
+				matrizC[contInpar] = matrizA[indice];
+				contInpar++;
+				
+				matrizC[contInpar] = matrizB[indice];
+				contInpar++;				
+			} else {
+				matrizD[contPar] = matrizA[indice];
+				contPar++;
+				
+				matrizD[contPar] = matrizB[indice];
+				contPar++;
 			}
-			
-			if (matrizA[indice] > maior) {
-				maior = matrizA[indice];
-			}
-			
-			//write("Valor digitado: " + matrizA[indice]);
-					
+			//indiceSeq += 1;
 		}
-		
-		Double media = soma / tamanhoMatriz;
-		
-		write("Maior Valor: " + maior + "\nMenor Valor: " + menor + "\nMédia: " + media);
-		
-		
+
+//		for (int indice = 0; indice < tamanhoMatriz; indice++) {
+//			write(matrizA[indice]);
+//		}
+//
+//		for (int indice = 0; indice < tamanhoMatriz; indice++) {
+//			write(matrizB[indice]);
+//		}
+
+		for (int indice = 0; indice < tamanhoMatriz; indice++) {
+			write("C" + matrizC[indice]);
+		}
+
+		for (int indice = 0; indice < tamanhoMatriz; indice++) {
+			write("D" + matrizD[indice]);
+		}
+
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">
 	}
-	
+
 	public static Scanner scanner = new Scanner(System.in);
-	
+
 	public static Integer calculateSizeOfLongestLine(Object messageToUser) {
 		String[] slicesOfMessage = messageToUser.toString().split("\n");
 		Integer bigger = 0;
