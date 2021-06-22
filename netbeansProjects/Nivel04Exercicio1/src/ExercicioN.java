@@ -15,51 +15,25 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class exercícioIalt {
+public class ExercicioN {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
 		
-
-		int tamanhoMatriz = 2;
-		Double[] matrizA = new Double[tamanhoMatriz];
-		Double[] matrizB = new Double[tamanhoMatriz];
-		Double[] matrizC = new Double[tamanhoMatriz];
-		Double[] matrizD = new Double[tamanhoMatriz*3];
-		int contD = 0;
-		String mensagem = "";
 		
-		for (int indice = 0; indice < matrizA.length; indice++) {
-			matrizA[indice] = readDouble("Digite um número (A)");
-			matrizD[contD] = matrizA[indice];
-			mensagem += "matrizD[" + contD + "]: " + matrizD[contD] + " << A\n";
-			contD++;
-		}
+		// pop-up window version
+		writeWindow("Hello! I'm a Pop-up Window app :)");
+		String petName = readWindowString("What is the name of your pet?");
+		writeWindow(petName + " is not allowed here! :0");
 		
-		for (int indice = 0; indice < matrizB.length; indice++) {
-			matrizB[indice] = readDouble("Digite um número (B)");
-			matrizD[contD] = matrizB[indice];
-			mensagem += "matrizD[" + contD + "]: " + matrizD[contD] + " << B\n";
-			contD++;
-		}
-		
-		for (int indice = 0; indice < matrizC.length; indice++) {
-			matrizC[indice] = readDouble("Digite um número (C)");
-			matrizD[contD] = matrizC[indice];
-			mensagem += "matrizD[" + contD + "]: " + matrizD[contD] + " << C\n";
-			contD++;
-		}
+		// console version
+		write("This is a new way to \n use a \n Console app :)");
+		String name = readString("Hello! I'm a Console app :) \n What's your name? ");
+		write("You're welcome, " + name + "!\n ;)");
 		
 		
-//		
-//		for (int indice = 0; indice < matrizD.length; indice++) {
-//			write("Matriz D: " + matrizD[indice]);
-//		}
-
-
-		System.out.println(mensagem);
-
+		
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">
 	}
