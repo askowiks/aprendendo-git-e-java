@@ -15,31 +15,35 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class exercicioA {
+public class exercicioD {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
 		
+//Elaborar um programa que leia 15 elementos inteiros de uma matriz A do tipo vetor.
+//Construir uma matriz B de mesmo tipo, observando a seguinte lei de formação:
+//"todo elemento da matriz B deve ser o quadrado do elemento da matriz A correspondente".
+//Apresentar os elementos das matrizes A e B.
 		
-		// pop-up window version
-/* Elaborar um programa que efetue a leitura de dez nomes de pessoas em uma matriz A
-do tipo vetor e apresente-os em seguida. */ 
+//PASSO 01 - CRIAR AS MATRIZES
 
-// PASSO 1: Criar matris 1D com indice 10.
-
-	String[] nomes = new String [10];
+	Integer[] arrayA = new Integer [15];
 	
-		for (int contador = 0; contador < 10; contador++) {
+	Integer[] arrayB = new Integer [15];
+	
+		for (int indice = 0; indice < arrayA.length; indice++) {
+			arrayA[indice] = readInteger("Digite o número");
 			
-			nomes[contador] = readString("Digite o nome");
-						
+			arrayB[indice] = (int)Math.pow(arrayA[indice], 2);
 		}
 		
-		for (int contador = 0; contador < nomes.length; contador++) {
-			write(nomes[contador]);
+		for (int indice = 0; indice < arrayA.length; indice++) {
+			
+			write("Volor de A: " + arrayA[indice] + "\nValor de B: " + arrayB[indice]);
 		}
-		
+			
+			
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">
 	}

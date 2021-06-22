@@ -15,7 +15,7 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class exercicioA {
+public class exercicioC {
 
 	public static void main(String[] args) {
 // </editor-fold>
@@ -23,22 +23,40 @@ public class exercicioA {
 		
 		
 		// pop-up window version
-/* Elaborar um programa que efetue a leitura de dez nomes de pessoas em uma matriz A
-do tipo vetor e apresente-os em seguida. */ 
-
-// PASSO 1: Criar matris 1D com indice 10.
-
-	String[] nomes = new String [10];
+	/* Escrever um programa que leia duas matrizes (denominadas A e B) do tipo
+vetor com 20 elementos reais. 
+Construir uma matriz C, sendo cada elemento da matriz C a subtração de um
+elemento correspondente da matriz A com um elemento correspondente da matriz B,
+ou seja, a operação de processamento deve estar baseada na operação
+C[I] ← A[I] - B[I]. Ao final, apresentar os elementos da matriz C */
+		
+	Integer[] arrayA = new Integer[5];
 	
-		for (int contador = 0; contador < 10; contador++) {
+	Integer[] arrayB = new Integer[5];
+	
+	Integer[] arrayC = new Integer[5];
+	
+		for (int indice = 0; indice < 5; indice++) {
+			arrayA[indice] = readInteger("valor de A");
 			
-			nomes[contador] = readString("Digite o nome");
-						
 		}
 		
-		for (int contador = 0; contador < nomes.length; contador++) {
-			write(nomes[contador]);
+		for (int indice = 0; indice < 5; indice++) {
+			arrayB[indice] = readInteger("valor de B");
+			
 		}
+		
+		for (int indice = 0; indice < 5; indice++) {
+			arrayC[indice] = arrayA[indice] - arrayB[indice];
+	
+					
+		write("Valores de C: " + arrayC[indice]);
+		}
+		
+	
+	
+	
+		
 		
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">

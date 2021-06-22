@@ -15,31 +15,51 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class exercicioA {
+public class exercícioIalt {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
 		
+
+		int tamanhoMatriz = 2;
+		Double[] matrizA = new Double[tamanhoMatriz];
+		Double[] matrizB = new Double[tamanhoMatriz];
+		Double[] matrizC = new Double[tamanhoMatriz];
+		Double[] matrizD = new Double[tamanhoMatriz*3];
+		int contD = 0;
+		String mensagem = "";
 		
-		// pop-up window version
-/* Elaborar um programa que efetue a leitura de dez nomes de pessoas em uma matriz A
-do tipo vetor e apresente-os em seguida. */ 
-
-// PASSO 1: Criar matris 1D com indice 10.
-
-	String[] nomes = new String [10];
-	
-		for (int contador = 0; contador < 10; contador++) {
-			
-			nomes[contador] = readString("Digite o nome");
-						
+		for (int indice = 0; indice < matrizA.length; indice++) {
+			matrizA[indice] = readDouble("Digite um número (A)");
+			matrizD[contD] = matrizA[indice];
+			mensagem += "matrizD[" + contD + "]: " + matrizD[contD] + " << A\n";
+			contD++;
 		}
 		
-		for (int contador = 0; contador < nomes.length; contador++) {
-			write(nomes[contador]);
+		for (int indice = 0; indice < matrizB.length; indice++) {
+			matrizB[indice] = readDouble("Digite um número (B)");
+			matrizD[contD] = matrizB[indice];
+			mensagem += "matrizD[" + contD + "]: " + matrizD[contD] + " << B\n";
+			contD++;
 		}
 		
+		for (int indice = 0; indice < matrizC.length; indice++) {
+			matrizC[indice] = readDouble("Digite um número (C)");
+			matrizD[contD] = matrizC[indice];
+			mensagem += "matrizD[" + contD + "]: " + matrizD[contD] + " << C\n";
+			contD++;
+		}
+		
+		
+//		
+//		for (int indice = 0; indice < matrizD.length; indice++) {
+//			write("Matriz D: " + matrizD[indice]);
+//		}
+
+
+		System.out.println(mensagem);
+
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">
 	}

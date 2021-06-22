@@ -15,31 +15,46 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class exercicioA {
+public class exercícioI {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
 		
+
+		int tamanhoMatriz = 5;
+		Double[] matrizA = new Double[tamanhoMatriz];
+		Double[] matrizB = new Double[tamanhoMatriz];
+		Double[] matrizC = new Double[tamanhoMatriz];
+		Double[] matrizD = new Double[tamanhoMatriz*3];
 		
-		// pop-up window version
-/* Elaborar um programa que efetue a leitura de dez nomes de pessoas em uma matriz A
-do tipo vetor e apresente-os em seguida. */ 
-
-// PASSO 1: Criar matris 1D com indice 10.
-
-	String[] nomes = new String [10];
-	
-		for (int contador = 0; contador < 10; contador++) {
+		for (int indice = 0; indice < matrizA.length; indice++) {
+			matrizA[indice] = readDouble("Digite um número (A)");
+		}
+		
+		for (int indice = 0; indice < matrizB.length; indice++) {
+			matrizB[indice] = readDouble("Digite um número (B)");
+		}
+		
+		for (int indice = 0; indice < matrizC.length; indice++) {
+			matrizC[indice] = readDouble("Digite um número (C)");
+		}
+		
+		int indiceB = matrizB.length;
+		int indiceC = matrizC.length * 2;
+		
+		for (int indice = 0; indice < tamanhoMatriz; indice++) {
+			matrizD[indice] = matrizA[indice];
+			matrizD[indiceB] = matrizB[indice];
+			matrizD[indiceC] = matrizC[indice];
 			
-			nomes[contador] = readString("Digite o nome");
-						
+			indiceB++;
+			indiceC++;
 		}
 		
-		for (int contador = 0; contador < nomes.length; contador++) {
-			write(nomes[contador]);
+		for (int indice = 0; indice < matrizD.length; indice++) {
+			write("Matriz C: " + matrizD[indice]);
 		}
-		
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">
 	}

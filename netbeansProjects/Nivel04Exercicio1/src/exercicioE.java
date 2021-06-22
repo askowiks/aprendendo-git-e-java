@@ -15,37 +15,63 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class exercicioA {
+public class exercicioE {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
-		
-		
-		// pop-up window version
-/* Elaborar um programa que efetue a leitura de dez nomes de pessoas em uma matriz A
-do tipo vetor e apresente-os em seguida. */ 
+		/* Elaborar um programa que leia uma matriz A do tipo vetor com 15 elementos inteiros.
+	Construir uma matriz B de mesmo tipo, e cada elemento da matriz B deve ser o resultado
+	da fatorial correspondente de cada elemento da matriz A. Apresentar as matrizes A e B.*/
 
-// PASSO 1: Criar matris 1D com indice 10.
+		Integer[] arrayA = new Integer[5];
 
-	String[] nomes = new String [10];
-	
-		for (int contador = 0; contador < 10; contador++) {
+		Long[] arrayB = new Long[5];
+
+		for (int indice = 0; indice < arrayA.length; indice++) {
 			
-			nomes[contador] = readString("Digite o nome");
-						
+			arrayA[indice] = readInteger("Digite um número");
+
+			Integer fatorial = arrayA[indice];
+			Long resultFatorial = 1L;
+			
+			
+			for (int antecessor = fatorial; antecessor >= 1; antecessor--) {
+
+				resultFatorial = resultFatorial * antecessor;
+			}
+			
+			arrayB[indice] = resultFatorial;
+
 		}
 		
-		for (int contador = 0; contador < nomes.length; contador++) {
-			write(nomes[contador]);
+		String mensagem = "ArrayA: ";
+		
+		for (int indice = 0; indice < arrayA.length; indice++) {
+			
+			mensagem += arrayA[indice] + ", ";
 		}
 		
+		mensagem += "\nArrayB: ";
+		for (int indice = 0; indice < arrayB.length; indice++) {
+			
+			mensagem += arrayB[indice] + ", ";
+		}
+		
+		write(mensagem);
+		//write(resultFatorial);
+		// 5 > 3 x4 x 3 x 2 x 1
+		// num * (num - 1).
+//			for (int indice = indice; indice >= 1; indice--) {
+//			
+//			arrayB[indice] = arrayA[indice] * (arrayA[indice] - 1);
+		//	}
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">
 	}
-	
+
 	public static Scanner scanner = new Scanner(System.in);
-	
+
 	public static Integer calculateSizeOfLongestLine(Object messageToUser) {
 		String[] slicesOfMessage = messageToUser.toString().split("\n");
 		Integer bigger = 0;

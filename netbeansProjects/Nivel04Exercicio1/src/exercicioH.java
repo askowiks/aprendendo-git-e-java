@@ -15,30 +15,45 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class exercicioA {
+public class exercicioH {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
 		
+/*
+		Elaborar um programa que leia 20 elementos do tipo real em uma matriz A unidimensional e construir uma 
+matriz B de mesma dimensão com os mesmos elementos armazenados na matriz A, porém de forma 
+invertida. Ou seja, o primeiro elemento da matriz A passa a ser o último da matriz B, o segundo elemento da 
+matriz A passa a ser o penúltimo da matriz B e assim por diante. Apresentar os elementos das matrizes A e B.
+
+		*/
 		
-		// pop-up window version
-/* Elaborar um programa que efetue a leitura de dez nomes de pessoas em uma matriz A
-do tipo vetor e apresente-os em seguida. */ 
-
-// PASSO 1: Criar matris 1D com indice 10.
-
-	String[] nomes = new String [10];
-	
-		for (int contador = 0; contador < 10; contador++) {
-			
-			nomes[contador] = readString("Digite o nome");
+		Double[] matrizA = new Double [3];
+		Double[] matrizB = new Double [matrizA.length];
+		int regressivo = matrizA.length - 1;
+		
+		for (int indice = 0; indice < matrizA.length; indice++) {
+			matrizA[indice] = readDouble("Digite um valor");
 						
 		}
 		
-		for (int contador = 0; contador < nomes.length; contador++) {
-			write(nomes[contador]);
+		for (int indice = 0; indice < matrizB.length; indice++) {
+			
+			matrizB[indice] = matrizA[regressivo];
+			
+			regressivo--;
 		}
+		
+		for (int indice = 0; indice < matrizA.length; indice++) {
+			
+			write(matrizB[indice]);
+		}
+		
+		
+		
+
+		
 		
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">
