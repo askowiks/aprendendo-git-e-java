@@ -15,30 +15,58 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class exercicioA {
+public class exercicioG {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
 		
+/*
+Elaborar um programa que leia duas matrizes do tipo vetor para o armazenamento
+de nomes de pessoas, sendo a matriz A com 20 elementos e a matriz B com 30
+elementos. Construir uma matriz C, sendo esta a junção das matrizes A e B.
+Desta forma, a matriz C deve ter a capacidade de armazenar 50 elementos. 
+Apresentar os elementos da matriz C
+		*/
 		
-		// pop-up window version
-/* Elaborar um programa que efetue a leitura de dez nomes de pessoas em uma matriz A
-do tipo vetor e apresente-os em seguida. */ 
-
-// PASSO 1: Criar matris 1D com indice 10.
-
-	String[] nomes = new String [10];
-	
-		for (int contador = 0; contador < 10; contador++) {
+		String[] matrizA = new String[20];
+		String[] matrizB = new String[30];
+		String[] matrizC = new String[matrizA.length + matrizB.length];
+		
+		//FOR A:
+		for (int indice = 0; indice < matrizA.length; indice++) {
+			matrizA[indice] = readString("digite um nome (a)");
+		}
+		
+		//FOR B:
+		for (int indice = 0; indice < matrizB.length; indice++) {
+			matrizB[indice] = readString("digite um nome (b)");
+		}
+		
+		//FOR CA:
+		for (int indice = 0; indice < matrizA.length; indice++) {
 			
-			nomes[contador] = readString("Digite o nome");
+			matrizC[indice] = matrizA[indice];
+			
+		}
+		
+		Integer indiceInicio = 0;
+		
+		//FOR CB:
+		for (int indiceB = matrizA.length; indiceB < matrizC.length; indiceB++) {
+			
+			matrizC[indiceB] = matrizB[indiceInicio];
+			
+			indiceInicio++;
 						
 		}
 		
-		for (int contador = 0; contador < nomes.length; contador++) {
-			write(nomes[contador]);
+		for (int indice = 0; indice < matrizC.length; indice++) {
+			
+			System.out.println(matrizC[indice]);
 		}
+		
+		
 		
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">

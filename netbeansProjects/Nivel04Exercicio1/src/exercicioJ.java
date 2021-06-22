@@ -15,37 +15,48 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class exercicioA {
+public class exercicioJ {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
-		
-		
-		// pop-up window version
-/* Elaborar um programa que efetue a leitura de dez nomes de pessoas em uma matriz A
-do tipo vetor e apresente-os em seguida. */ 
 
-// PASSO 1: Criar matris 1D com indice 10.
+		int tamanhoMatriz = 5;
+		Integer[] matrizA = new Integer[tamanhoMatriz];
+		Integer[] matrizB = new Integer[tamanhoMatriz];
+		int soma = 0;
 
-	String[] nomes = new String [10];
-	
-		for (int contador = 0; contador < 10; contador++) {
+		int indice = 0;
+		int cont = 0;
+
+		for (; indice < matrizA.length; indice++) {
+			matrizA[indice] = readInteger("Digite um valor (A)");
+
+			soma = 0;
+
+			for (cont = matrizA[indice]; cont >= 1; cont--) {
+				soma += cont;
+
+			}
+
+			matrizB[indice] = soma;
+		}
+		
+		for (indice = 0; indice < matrizB.length; indice++) {
 			
-			nomes[contador] = readString("Digite o nome");
-						
+		write(matrizB[indice]);
 		}
+
 		
-		for (int contador = 0; contador < nomes.length; contador++) {
-			write(nomes[contador]);
-		}
 		
+	
+
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">
 	}
-	
+
 	public static Scanner scanner = new Scanner(System.in);
-	
+
 	public static Integer calculateSizeOfLongestLine(Object messageToUser) {
 		String[] slicesOfMessage = messageToUser.toString().split("\n");
 		Integer bigger = 0;

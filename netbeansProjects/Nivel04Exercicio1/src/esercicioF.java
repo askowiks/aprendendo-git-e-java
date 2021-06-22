@@ -15,30 +15,50 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class exercicioA {
+public class esercicioF {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
 		
+		int tamanho = 15;
 		
-		// pop-up window version
-/* Elaborar um programa que efetue a leitura de dez nomes de pessoas em uma matriz A
-do tipo vetor e apresente-os em seguida. */ 
-
-// PASSO 1: Criar matris 1D com indice 10.
-
-	String[] nomes = new String [10];
-	
-		for (int contador = 0; contador < 10; contador++) {
+		Integer[] matrizA = new Integer[tamanho];
+		Integer[] matrizB = new Integer[tamanho];
+		Integer[] matrizC = new Integer[tamanho * 2];
+		
+		for (int indice = 0; indice < matrizA.length; indice++) {
+			matrizA[indice] = readInteger("digite um número (a)");
+		}
+		
+		for (int indice = 0; indice < matrizB.length; indice++) {
+			matrizB[indice] = readInteger("digite um número (b)");
+		}
+		
+		Integer indiceComecandoNoTamanho = matrizA.length;
+		
+		for (int indiceComecandoEmZero = 0; indiceComecandoEmZero < matrizA.length; indiceComecandoEmZero++) {
 			
-			nomes[contador] = readString("Digite o nome");
-						
+			matrizC[indiceComecandoEmZero] = matrizA[indiceComecandoEmZero];
+			
+			
+			//if (matrizC[indiceComecandoEmZero] > matrizA.length) {
+				
+			matrizC[indiceComecandoNoTamanho] = matrizB[indiceComecandoEmZero];
+				
+			//}
+			
+			indiceComecandoNoTamanho++;
 		}
 		
-		for (int contador = 0; contador < nomes.length; contador++) {
-			write(nomes[contador]);
+		
+		for (int indice = 0; indice < matrizC.length; indice++) {
+			
+		write(matrizC[indice] + ", ");
 		}
+		
+			
+				
 		
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">

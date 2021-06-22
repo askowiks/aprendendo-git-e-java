@@ -15,30 +15,34 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-public class exercicioA {
+public class exercicioB {
 
 	public static void main(String[] args) {
 // </editor-fold>
 		// Your code starts here :)
 		
-		
-		// pop-up window version
-/* Elaborar um programa que efetue a leitura de dez nomes de pessoas em uma matriz A
-do tipo vetor e apresente-os em seguida. */ 
-
-// PASSO 1: Criar matris 1D com indice 10.
-
-	String[] nomes = new String [10];
+	/* Elaborar um programa que leia oito elementos inteiros em uma matriz A do tipo vetor.
+		Construir uma matriz B de mesma dimensão com os elementos da matriz A multiplicados por 3.
+		O elemento B[1] deve ser implicado pelo elemento A[1] * 3, o elemento B[2] implicado pelo
+		elemento A[2] * 3 e assim por diante, até 8. Apresentar a matriz B. */
 	
-		for (int contador = 0; contador < 10; contador++) {
+	//Integer numero = readInteger("Digite o numero");
+	
+	Integer[] arrayA = new Integer[8];
+	Integer[] arrayB = new Integer[8];
+	
+		for (int indice = 0; indice < arrayA.length; indice++) {
+			arrayA[indice] = readInteger("Digite o valor");
 			
-			nomes[contador] = readString("Digite o nome");
-						
+			arrayB[indice] = arrayA[indice] * 3;
 		}
+			write("Varlores de B: ");
+			
+			for (int indice = 0; indice < arrayB.length; indice++) {
+			write("[" + indice + "]: " + arrayB[indice]);
+		}
+					
 		
-		for (int contador = 0; contador < nomes.length; contador++) {
-			write(nomes[contador]);
-		}
 		
 		// Your code ends here :(
 //<editor-fold defaultstate="collapsed" desc="final program settings...">
